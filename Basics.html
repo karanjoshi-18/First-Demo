@@ -1,0 +1,207 @@
+<!-- 
+** Git Config :- **
+Global Git config controls settings for the currently logged-in user and all their repositories.
+Local Git config controls settings for a specific repository.
+
+
+** Clone and Status :- **
+
+Remote = GitHub (or any online server).
+Local = Your PC or laptop.
+
+clone = Copy repository from remote (GitHub) to local (your PC).
+status = Shows the current state of the local repository (i.e., what changes have been made).
+
+
+Untracked → New files that Git doesn’t know about.
+Example: You create a new file newfile.txt.
+
+Modified → If you change an existing file (already tracked by Git).
+Example: You edit an existing file file1.txt.
+
+Staged → After running git add <file>, the file moves to the staging area, ready for the next commit.
+Example: You run git add file1.txt and git add newfile.txt.
+
+Unmodified (Post-commit) → After committing, the file is now unmodified again because it's committed to the repository, and there are no changes since the last commit.
+Example: You run git commit -m "Commit message", and now file1.txt and newfile.txt are back to an unmodified state.
+
+
+
+Scenario 1: Add a New File (newfile.txt) and Update Existing File (already.txt) to an Existing GitHub Repository
+
+Scenario Setup:
+
+GitHub Repository: demo-repo
+
+Local Folder: depoRepo (this is the local folder where your project files are located)
+
+
+Steps:
+
+1. Link the Local Folder (depoRepo) to the GitHub Repository (demo-repo):
+
+First, navigate to your local folder:
+
+cd path/to/depoRepo
+
+Initialize a Git repository in this folder (if not already done):
+
+git init
+
+Link the local folder to the remote repository on GitHub:
+
+git remote add origin https://github.com/username/demo-repo.git
+
+Replace https://github.com/username/demo-repo.git with the actual URL of your GitHub repository.
+
+
+
+
+2. Make Changes in Your Local Folder:
+
+Add a new file: newfile.txt.
+
+Modify the existing file: already.txt.
+
+
+
+3. Check Git Status:
+
+git status
+
+Git will show newfile.txt as untracked.
+
+Git will show already.txt as modified.
+
+
+
+4. Stage the Changes:
+
+git add .
+
+This stages both the new file (newfile.txt) and the modified file (already.txt).
+
+
+
+5. Commit the Changes:
+
+git commit -m "Added newfile.txt and updated already.txt"
+
+
+6. Push the Changes to GitHub:
+
+git push origin main
+
+Now, both newfile.txt and the updated already.txt will be pushed to the GitHub repository (demo-repo).
+
+
+
+
+
+---
+
+Scenario 2: Add a Local Project Folder to an Empty GitHub Repository
+
+Scenario Setup:
+
+GitHub Repository: project (empty repository on GitHub)
+
+Local Folder: projectFolder (the folder on your local machine with project files)
+
+
+Steps:
+
+1. Navigate to the Local Project Folder:
+
+Go to the directory where your project files are located:
+
+cd path/to/projectFolder
+
+
+
+2. Initialize a Git Repository in the Local Folder:
+
+If this folder is not already a Git repository, initialize it:
+
+git init
+
+
+
+3. Stage All Project Files:
+
+Add all the files in your project to Git:
+
+git add .
+
+
+
+4. Commit the Files:
+
+git commit -m "Initial commit"
+
+
+5. Add the Remote Repository:
+
+Link your local repository to the empty GitHub repository:
+
+git remote add origin https://github.com/username/project.git
+
+Replace https://github.com/username/project.git with the actual URL of your empty GitHub repository.
+
+
+
+
+6. Push the Project to GitHub:
+
+git push -u origin main
+
+This will upload your local project files to the empty GitHub repository (project).
+
+
+
+
+
+---
+
+General Notes:
+
+Check the status of your repository:
+
+git status
+
+Stage files:
+
+To stage all files:
+
+git add .
+
+To stage specific files:
+
+git add file_name
+
+
+Commit changes:
+
+git commit -m "Your commit message"
+
+Push changes to GitHub:
+
+git push origin main
+
+Add a remote repository:
+
+git remote add origin <repo-link>
+
+
+
+---
+
+Summary of Key Concepts:
+
+In Scenario 1, you are linking an already existing local folder (depoRepo) to a GitHub repository (demo-repo) and then pushing changes to it.
+
+In Scenario 2, you are pushing an entire project from a local folder (projectFolder) to a new, empty GitHub repository (project).
+
+
+Now both scenarios are clear with the local folder and GitHub repository links explained properly.
+-->
